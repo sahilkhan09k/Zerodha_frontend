@@ -19,7 +19,7 @@ function AuthProvider({ children }) {
         });
         dispatch(setUser(res.data.data));
         localStorage.setItem("userData", res.data.message);
-        window.open("http://localhost:3001", "_blank");
+        window.open("https://zerodha-dashboard-gilt.vercel.app/", "_blank");
       } catch (err) {
         // Step 2: try refresh if access token expired
         try {
@@ -31,7 +31,7 @@ function AuthProvider({ children }) {
           });
           dispatch(setUser(res.data.data));
           localStorage.setItem("userData", res.data.message);
-          window.open("http://localhost:3001", "_blank");
+          window.open("https://zerodha-dashboard-gilt.vercel.app/", "_blank");
         } catch (err2) {
           dispatch(logout());
         }

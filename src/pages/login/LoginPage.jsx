@@ -28,7 +28,7 @@ function LoginPage() {
       dispatch(login(res.data.message));
       localStorage.setItem("userData", res.data.message);
       toast.success("Logged in successfully");
-      window.open("http://localhost:3001", "_blank");
+      window.open("https://zerodha-dashboard-gilt.vercel.app/", "_blank");
 
       // navigate("/dashboard");
     } catch (err) {
