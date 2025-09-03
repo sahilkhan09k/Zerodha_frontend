@@ -13,6 +13,7 @@ function SignUp() {
   const [avatar, setAvatar] = useState(null);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ function SignUp() {
       formData.append("avatar", avatar); // 👈 actual file
 
       const response = await axios.post(
-        "http://localhost:5000/api/v1/user/register",
+        `${API_URL}/api/v1/users/register`,
         formData,
         {
           headers: {

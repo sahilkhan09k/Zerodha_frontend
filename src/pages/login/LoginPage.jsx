@@ -13,13 +13,14 @@ function LoginPage() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate()
   const dispatch = useDispatch();
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/user/login",
+        `${API_URL}/api/v1/users/login`,
         { email, password },
         { withCredentials: true }
       );
